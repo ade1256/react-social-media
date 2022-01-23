@@ -6,13 +6,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const PostItemComponent = (props) => {
   const history = useHistory();
   return (
-    <PostItemContainer
-      id={props.id}
-      onClick={() =>
-        props.isDetailPost ? null : history.push(`/detail-post/${props.id}`)
-      }
-      isDetailPost={props.isDetailPost}
-    >
+    <PostItemContainer id={props.id} isDetailPost={props.isDetailPost}>
       <div className="avatar">
         <img
           src={`https://ui-avatars.com/api/?name=${props.name}`}
@@ -21,14 +15,24 @@ const PostItemComponent = (props) => {
       </div>
       <div className="content">
         <div className="header">
-          <span className="name">{props.name}</span>
+          <span
+            className="name"
+            onClick={() => history.push(`/user/${props.userId}`)}
+          >
+            {props.name}
+          </span>
           <span className="username">@{props.username}</span>
           <span className="company">
             <i className="fa fa-briefcase"></i> {props.company}
           </span>
           <h3>{props.title}</h3>
         </div>
-        <div className="body">
+        <div
+          className="body"
+          onClick={() =>
+            props.isDetailPost ? null : history.push(`/detail-post/${props.id}`)
+          }
+        >
           <p>{props.body}</p>
         </div>
         {props.isDetailPost ? null : (

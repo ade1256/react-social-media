@@ -1,5 +1,6 @@
 import DetailPostPage from "../pages/DetailPost";
 import HomePage from "../pages/Home";
+import UserDetailPage from "../pages/UserDetail";
 
 export const routes = [
   {
@@ -10,6 +11,11 @@ export const routes = [
   {
     path: "/detail-post/:id",
     component: DetailPostPage,
+    exact: true,
+  },
+  {
+    path: "/user/:userId",
+    component: UserDetailPage,
     exact: true,
   },
 ];

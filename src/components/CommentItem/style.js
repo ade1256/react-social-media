@@ -58,4 +58,5 @@ export const CommentItemContainer = styled.div`
         cursor: pointer;
       }
     }
+  }
 `

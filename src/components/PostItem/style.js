@@ -7,7 +7,7 @@ export const PostItemContainer = styled.div`
   display: flex;
   padding: 16px 24px;
   margin: 0px 24px;
-  ${props => props.isDetailPost && "border: none;"}
+  ${(props) => props.isDetailPost && "border: none;"}
   .avatar {
     width: 64px;
     height: 64px;
@@ -23,8 +23,15 @@ export const PostItemContainer = styled.div`
     width: 100%;
   }
   .header {
-    .name, .username, .company {
+    .name,
+    .username,
+    .company {
       font-size: 12px;
+    }
+    .name {
+      &:hover {
+        cursor: pointer;
+      }
     }
     .company {
       margin-left: 8px;
@@ -60,4 +67,4 @@ export const PostItemContainer = styled.div`
       }
     }
   }
-`
+`;

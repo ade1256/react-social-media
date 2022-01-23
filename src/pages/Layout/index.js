@@ -2,10 +2,11 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { routes } from '../../app/routes'
 import HomePage from '../Home'
+import { LayoutContainer } from './style'
 
 const LayoutPage = () => {
   return (
-    <>
+    <LayoutContainer>
      <BrowserRouter>
         <Switch>
           <Route path="/" component={HomePage} exact />
@@ -16,7 +17,7 @@ const LayoutPage = () => {
           }
         </Switch>
       </BrowserRouter>
-    </>
+    </LayoutContainer>
   )
 }
 
