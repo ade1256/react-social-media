@@ -3,14 +3,16 @@ import PropTypes from "prop-types";
 import { GET_PHOTOS } from '../../redux/photos/photosAPI';
 import { isEmpty } from 'lodash';
 import { AlbumItemContainer } from './style';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const AlbumItemComponent = (props) => {
+  const history = useHistory()
   const [photos, setPhotos] = useState([])
   const _renderThumbnails = () => {
     const elements = []
     photos.map((photo) => {
       elements.push(
-        <div className="thumbnail" key={photo.id}>
+        <div className="thumbnail" key={photo.id} onClick={() => history.push(`/photos/${photo.id}`)}>
           <img src={photo.thumbnailUrl} alt={photo.title} />
         </div>
       )

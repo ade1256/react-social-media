@@ -37,7 +37,13 @@ const PostItemComponent = (props) => {
         </div>
         {props.isDetailPost ? null : (
           <div className="footer">
-            <button>
+            <button
+              onClick={() =>
+                props.isDetailPost
+                  ? null
+                  : history.push(`/detail-post/${props.id}`)
+              }
+            >
               <i className="fa fa-comment"></i> {props.totalComments} Comments
             </button>
           </div>

@@ -9,6 +9,9 @@ export const AlbumItemContainer = styled.div`
     margin-top: 8px;
     .thumbnail {
       margin: 4px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `

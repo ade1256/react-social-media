@@ -5,3 +5,9 @@ export const GET_PHOTOS = (albumId) => {
   const data = axiosInstance.get(url);
   return data;
 }
+
+export const GET_PHOTO_DETAIL = (photoId) => {
+  const url = `/photos/${photoId}`;
+  const data = axiosInstance.get(url);
+  return data;
+}
